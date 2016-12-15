@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Webs>
+  <Web Url="">
+    <Lists>
+      <!--<ListInstance Url="Lists/Glosario">
+        <Data>
+          <Rows>
+            <Row>
+              <Field Name="Title">Acreditación</Field>
+              <Field Name="DescripcionTermino">Proceso por el que una agencia garantiza que las enseñanzas conducentes a la obtención de títulos de carácter oficial, cumplen los requisitos preestablecidos de calidad.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Admisión</Field>
+              <Field Name="DescripcionTermino">Proceso por el cual los alumnos de nuevo ingreso o continuación de estudios formalizan su ingreso en el Centro, una vez superados y comprobados los requisitos específicos establecidos.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Cartas de Servicios</Field>
+              <Field Name="DescripcionTermino">Documentos públicos elaborados y difundidos por parte de la Unidad responsable de la prestación de un servicio, donde se refleja de forma accesible: el objeto del servicio, las expectativas razonables que se esperan satisfacer, los procesos de acceso al servicio y los compromisos de servicio que la Unidad asume como estándar.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Comisión de Docencia, Investigación y Calidad</Field>
+              <Field Name="DescripcionTermino">Máximo órgano responsable de la implantación desarrollo y seguimiento del SGIC. </Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Competencia</Field>
+              <Field Name="DescripcionTermino">Conjunto de conocimientos, técnicas, habilidades y valores que posibilita desarrollar adecuadamente una función, tarea o actividad en el ámbito profesional.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Directriz</Field>
+              <Field Name="DescripcionTermino">Conjunto de instrucciones que ayudan a entender un aspecto de un modelo o sistema.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Enseñanzas de Licenciatura Universitaria</Field>
+              <Field Name="DescripcionTermino">Carrera de primer grado terciario universitario. La carga horaria de los estudios no será inferior a las 2200 horas de clase o actividades educativas supervisadas, o en una modalidad educativa a distancia, semipresencial o equivalente, distribuidas en un lapso no inferior a cuatro años lectivos. El título a expedir será el de “Licenciado/a”. (Decreto 104/14)</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Enseñanzas de Especialización</Field>
+              <Field Name="DescripcionTermino">Carrera de posgrado que comprende estudios específicos de profundización en una disciplina o conjunto de disciplinas afines, comprendidas en la educación de grado. La duración mínima será de un año lectivo. La carga horaria incluirá al menos 300 horas de clase o actividades educativas supervisadas, o en una modalidad educativa a distancia, semipresencial o equivalente, así como la dedicación personal adicional que el estudiante debe realizar para alcanzar los objetivos formativos del plan de estudios. El título a expedir contendrá el término de “Especialización” o “Especialista”. (Decreto 104/14)</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Enseñanzas de Maestría o Master</Field>
+              <Field Name="DescripcionTermino">Carrera de posgrado que comprende estudios de ampliación y profundización de los estudios universitarios de grado en una disciplina o área disciplinaria; y de tareas de investigación que impliquen un manejo activo y creativo de conocimiento, incluyendo una tesis o memoria final, bajo la supervisión de un tutor y la evaluación de un tribunal, con al menos un miembro externo al programa académico de la institución. La duración mínima será de dos años lectivos. La carga horaria incluirá 500 horas de clase o actividades educativas supervisadas (incluyendo el trabajo final), o en una modalidad educativa a distancia, semipresencial o equivalente, así como la dedicación personal adicional que el estudiante debe realizar para alcanzar los objetivos formativos del plan de estudios. El título a expedir será el de “Master” o “Magister”. (Decreto 104/14)</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Enseñanzas de Doctorado</Field>
+              <Field Name="DescripcionTermino">Carrera de posgrado que constituye el nivel superior de posgrado en un área de conocimiento. Su objetivo central es la formación científica en un área especializada del conocimiento mediante la cual el aspirante adquiere capacidades para desarrollar una investigación original, así como para orientar trabajos de investigación de otras personas. Esto se obtendrá en el proceso de realización de una tesis que signifique una contribución original al conocimiento del tema, dirigida y evaluada por tutores. Ese trabajo de diseñar, proponer, elaborar y finalmente defender la tesis será la actividad central y predominante del doctorando, la cual deberá ser evaluada por un tribunal, con al menos un miembro externo al programa académico de la institución. La duración mínima será de tres años. El título a expedir será de Doctor/a. (Decreto 104/14)</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Estrategia</Field>
+              <Field Name="DescripcionTermino">Conjunto de acciones y comportamientos de las personas, equipo y organismo responsable, coordinados y orientados para la consecución de los objetivos establecidos.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Evaluación Continua</Field>
+              <Field Name="DescripcionTermino">Sistema de evaluación que toma en cuenta, además de los posibles exámenes, el trabajo desarrollado por el alumno mediante la participación en clases teóricas o prácticas, seminarios, talleres, proyectos, informes, trabajos en grupos u otras actividades.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Evidencia o Registro</Field>
+              <Field Name="DescripcionTermino">Documento que presenta resultados obtenidos o proporciona evidencia de actividades desempeñadas.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Examen</Field>
+              <Field Name="DescripcionTermino">Prueba escrita u oral sobre el contenido total o parcial de cada uno de los programas formativos de una titulación.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Formato</Field>
+              <Field Name="DescripcionTermino">Documento preparado para recoger los resultados obtenidos o evidencias de actividades desempeñadas.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Garantía de la Calidad</Field>
+              <Field Name="DescripcionTermino">Actividades encaminadas a asegurar la calidad interna/externa del Centro. En este caso, contempla acciones dirigidas a asegurar la calidad de las enseñanzas, así como a generar y mantener la confianza del estudiante, del profesorado y de la sociedad.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Grupo de Interés</Field>
+              <Field Name="DescripcionTermino">Persona, grupo o institución que intervienen de forma directa o indirecta en las enseñanzas o en los resultados obtenidos en el Centro. Entre otros, se incluyen: estudiantes, profesorado, egresados, personal técnico de administración y servicios, empleadores y sociedad en general.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Guía Docente</Field>
+              <Field Name="DescripcionTermino">Documento destinado al apoyo y guía del aprendizaje de una materia, recogiendo los objetivos, contenidos, bibliografía, sistema de evaluación y otros apartados de la enseñanza de la asignatura.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Incidencia</Field>
+              <Field Name="DescripcionTermino">Acontecimiento que sobreviene en el curso de un asunto o actividad y tiene con ellos alguna conexión.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Indicador</Field>
+              <Field Name="DescripcionTermino">Dato o conjunto de datos, que ayudan a medir objetivamente la evolución de un proceso o de una actividad.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Información Pública</Field>
+              <Field Name="DescripcionTermino">Mecanismos del que se dota el Centro para garantizar la publicación periódica de información actualizada relativa a las titulaciones y a los programas.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Líder/es</Field>
+              <Field Name="DescripcionTermino">Persona/s que dirigen, coordinan o supervisan las actividades asociadas a los procesos correspondientes y son responsables, en último término, del correcto cumplimiento de su ejecución.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Manual de Calidad</Field>
+              <Field Name="DescripcionTermino">Documento que especifica el sistema de gestión de la calidad de una organización.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Manual de Procesos</Field>
+              <Field Name="DescripcionTermino">Documento que desarrolla cada uno de los componentes del Mapa de Procesos.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Mapa de Procesos</Field>
+              <Field Name="DescripcionTermino">Es la representación gráfica de los procesos que están presentes en una organización, mostrando la relación entre ellos y sus relaciones con el exterior.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Matrícula</Field>
+              <Field Name="DescripcionTermino">Proceso mediante el cual la persona admitida en el Centro, adquiere la calidad de estudiante y puede beneficiarse del servicio educativo que ofrece el mismo, con los derechos y deberes que regulan la prestación de dicho servicio. La matrícula deberá ser renovada en cada curso académico, mediante el pago del precio correspondiente a la misma, siguiendo los procesos y plazos establecidos por el Centro.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Mejora Continua</Field>
+              <Field Name="DescripcionTermino">Concepto empleado en los modelos de gestión, que implica un esfuerzo continuado de la organización para avanzar en la calidad.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Movilidad</Field>
+              <Field Name="DescripcionTermino">Estancia desarrollada por un estudiante en una Universidad o bien una empresa extranjera o nacional, en la que el beneficiario disfruta de la exención del pago de tasas académicas por parte de ésta y que incluye, en la mayoría de los casos, el reconocimiento académico de la actividad llevada a cabo.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Objetivos de Calidad</Field>
+              <Field Name="DescripcionTermino">En el ámbito universitario, fin que se pretende alcanzar relacionado con la mejora, la superación, la eficacia y la excelencia en el campo de la innovación, la docencia, la gestión y la investigación.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Oferta Formativa Anual</Field>
+              <Field Name="DescripcionTermino">Relación de titulaciones ofertadas en cada período académico.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Orientación Profesional</Field>
+              <Field Name="DescripcionTermino">Conjunto de acciones de ayuda a los alumnos en su definición de objetivos profesionales.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Personal Docente e Investigador (PDI)</Field>
+              <Field Name="DescripcionTermino">Personal de los cuerpos docentes universitarios que desarrolla actividad docente e investigadora en el Centro.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Personal Técnico de Administración y Servicios (TAS)</Field>
+              <Field Name="DescripcionTermino">Personal laboral no docente que configura la estructura administrativa, de gestión y de servicios del Centro.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Plan de Formación</Field>
+              <Field Name="DescripcionTermino">Conjunto de actividades formativas dirigidas a cubrir las necesidades de formación del PDI y TAS que se realizarán durante el curso académico.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Planificación</Field>
+              <Field Name="DescripcionTermino">Procedimiento por el cual, el equipo, personas u organismos responsable de la enseñanza, diseña las estrategias para la consecución de los objetivos de la misma (debe ser sistemática y periódica)</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Planificación Docente</Field>
+              <Field Name="DescripcionTermino">Procedimiento de definición de las guías Académicas de cada asignatura desarrollando el modelo pedagógico del Centro.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Política de Calidad</Field>
+              <Field Name="DescripcionTermino">Conjunto de directrices que marcan las intenciones y orientación de la organización con respecto a la Calidad.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Política de Personal</Field>
+              <Field Name="DescripcionTermino">Conjunto de directrices que marcan las intenciones y orientación de la organización con respecto a la selección, promoción y formación del Personal.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Prácticas Académicas Externas Curriculares</Field>
+              <Field Name="DescripcionTermino">Se configuran como actividades académicas integrantes de cada Plan de Estudios concreto. </Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Proceso</Field>
+              <Field Name="DescripcionTermino">Conjunto de actividades mutuamente relacionadas o que interactúan, las cuales transforman elementos de entrada en resultados.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Proceso Clave</Field>
+              <Field Name="DescripcionTermino">Conjunto de actividades mediante las cuales se desarrolla la gestión de la actividad académica y formativa.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Proceso de Apoyo</Field>
+              <Field Name="DescripcionTermino">Conjunto de actividades que dan soporte a los procesos clave garantizando la disponibilidad y calidad de los recursos y servicios requeridos.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Proceso Estratégico</Field>
+              <Field Name="DescripcionTermino">Conjunto de actividades que definen el marco general de actuación del Centro, en materia de política y objetivos de calidad, diseño de oferta formativa, política de personal y mejora continua.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Programa de Inserción Profesional</Field>
+              <Field Name="DescripcionTermino">Proyecto regulado destinado a orientar al alumno de los últimos cursos para el acceso al primer empleo.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Programa Formativo</Field>
+              <Field Name="DescripcionTermino">Conjunto de enseñanzas organizadas que conducen a la obtención de un título o grado junto a todos los elementos normativos, técnicos, humanos y materiales que lo envuelven y lo llevan a alcanzar los objetivos establecidos por el organismo responsable del mismo.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Reclamación</Field>
+              <Field Name="DescripcionTermino">Interpelación que se hace en relación con un hecho o actividad mostrando su no conformidad.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Recursos Materiales</Field>
+              <Field Name="DescripcionTermino">Instalaciones (aulas, salas de estudio, aulas de informática, laboratorios docentes, centros de investigación, centros de prácticas, salas de reunión, puestos de lectura en biblioteca, despachos de tutorías) y equipamiento material científico, técnico, asistencial y artístico, en las que se desarrolla el proceso de enseñanza-aprendizaje.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Resultados</Field>
+              <Field Name="DescripcionTermino">Consecuencias de los procesos relacionados con las actividades desarrolladas en el Centro.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Resultados de la Formación</Field>
+              <Field Name="DescripcionTermino">Son los efectos obtenidos en la aplicación de determinados procesos, de los que se ha dotado el Centro para garantizar que se miden, analizan y utilizan los resultados (del aprendizaje, de la inserción laboral y de la satisfacción de los distintos grupos de interés) para la toma de decisiones y la mejora de la calidad de las enseñanzas.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Satisfacción</Field>
+              <Field Name="DescripcionTermino">Percepción del cliente sobre el grado en que se han cumplido sus expectativas.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Selección</Field>
+              <Field Name="DescripcionTermino">Conjunto de trámites que el estudiante debe realizar para poder participar en el proceso de preinscripción o admisión del Centro.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">SGIC (Sistema de Garantía Interna de la Calidad)</Field>
+              <Field Name="DescripcionTermino">Sistema propio y estructurado de políticas, objetivos y procesos de gestión que promueve que las actuaciones del Centro estén en la dirección apropiada para lograr los objetivos de calidad asociados a las enseñanzas impartidas.</Field>
+            </Row>
+            <Row>
+              <Field Name="Title">Sugerencia</Field>
+              <Field Name="DescripcionTermino">Propuesta, idea que se sugiere.</Field>
+            </Row>
+          </Rows>
+        </Data>
+      </ListInstance>-->
+    </Lists>
+  </Web>
+</Webs>

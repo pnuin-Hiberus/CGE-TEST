@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Field
+       ID="{2465ACFB-A739-4DEB-A5AD-FB7F8D94D7A9}"
+       Name="Pregunta"
+       StaticName="Pregunta"
+       DisplayName="Pregunta"
+       Type="Text"
+       Indexed="FALSE"
+       Required="TRUE"
+       MaxLength="255"
+       Group="Columnas Consejo General de Enfermería">
+  </Field>
+</Elements>

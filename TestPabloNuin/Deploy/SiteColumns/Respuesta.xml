@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Field
+       ID="{98237747-2146-429D-B924-FBE0529483EF}"
+       Name="Respuesta"
+       StaticName="Respuesta"
+       DisplayName="Respuesta"
+       Type="Note"
+       Indexed="FALSE"
+       Required="TRUE"
+       RichText="TRUE"
+       RichTextMode="FullHtml"
+       Group="Columnas Consejo General de Enfermería">
+  </Field>
+</Elements>

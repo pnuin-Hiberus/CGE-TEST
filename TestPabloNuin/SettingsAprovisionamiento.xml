@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Tenant Url="https://hiberussp.sharepoint.com/" AdminUrl="https://hiberussp-admin.sharepoint.com/">
+  <Credentials Account="sharepoint@hiberus-sp.com" Password="SsHh1620"></Credentials>
+  <Sites>
+    <Site Title="Sitio de Pablo Nuin" Url="sites/pnuin" LCID="3082" TimeZoneId="13" Description="Sitio de Pruebas de Pablo Nuin" CurrentResourceUsage="300" StorageUsage="3" SiteOwnerLogin="sharepoint@hiberus-sp.com" Template="BLANKINTERNET#0" ProvisionListItems="true" ListItemsSourcePath="Deploy\Lists\Items\Informacion.xml">
+      <Features Provision="false">
+      </Features>
+      <Webs Provision="true">
+        <RootWeb Provision="true" SearchCenterUrl="" WelcomePage="SitePages/DevHome.aspx">
+          <Features Provision="false">
+            <!--Lista de los ids:http://www.spsdemo.com/lists/features/all%20sharepoint%20features.aspx-->
+          </Features>
+          <Files Provision="true">
+            <Images SourcePath="Deploy\Branding\Images\" TargetPath="Style Library/CGE/Images" Provision="false">
+              <!--<File Name="arrows.gif" />-->
+            </Images>
+            <Css SourcePath="Deploy\Branding\CSS\" TargetPath="Style Library/CGE/CSS" Provision="false">
+              <!--<File Name="responsiveslides.css" />
+              <File Name="NoticiasDestacadas.css" />
+              <File Name="Glosario.css" />-->
+            </Css>
+            <Js SourcePath="Deploy\Branding\JS\" TargetPath="Style Library/CGE/JS" Provision="true">
+              <File Name="jquery-2.2.4.min.js"/>
+              <File Name="Adjuntos.js"/>
+              <!--<File Name="jquery-1.8.3.min.js"/>
+              <File Name="jquery-ui.min.js"/>
+              <File Name="linq.min.js"/>
+              <File Name="responsiveslides.min.js"/>
+              <File Name="Home.js"/>
+              <File Name="Glosario.js"/>-->
+            </Js>
+            <DisplayTemplates SourcePath="Deploy\Branding\DisplayTemplates\" TargetPath="_catalogs/masterpage/Display Templates" Provision="false">
+            </DisplayTemplates>
+            <Fonts SourcePath="Deploy\Branding\Fonts\" TargetPath="Style Library/CGE/Fonts" Provision="false">
+            </Fonts>
+            <LanguageFiles SourcePath="Deploy\Branding\LanguageFiles\" TargetPath="_catalogs/masterpage/Display Templates/Language Files" Provision="false">
+            </LanguageFiles>
+            <xsl SourcePath="Branding\Files\XSL\" TargetPath="Style Library/CGE/XSL" Provision="false">
+              <!--Slider noticias--><!--
+              <File Name="Noticias_ContentQueryMain.xsl" SourcePath="NoticiasSlider\" />
+              <File Name="Noticias_Header.xsl" SourcePath="NoticiasSlider\" />
+              <File Name="Noticias_ItemStyle.xsl" SourcePath="NoticiasSlider\" />
+              --><!--Noticias destacadas--><!--
+              <File Name="NoticiasDestacadas_ContentQueryMain.xsl" SourcePath="NoticiasDestacadas\" />
+              <File Name="NoticiasDestacadas_Header.xsl" SourcePath="NoticiasDestacadas\" />
+              <File Name="NoticiasDestacadas_ItemStyle.xsl" SourcePath="NoticiasDestacadas\" />
+              --><!--Glosario--><!--
+              <File Name="Glosario_ContentQueryMain.xsl" SourcePath="Glosario\" />
+              <File Name="Glosario_Header.xsl" SourcePath="Glosario\" />
+              <File Name="Glosario_ItemStyle.xsl" SourcePath="Glosario\" />-->
+            </xsl>
+          </Files>
+          <CustomActions Provision="false">
+          </CustomActions>
+          <Catalogs Provision="true">
+            <Masterpages SourcePath="Deploy\Branding\MasterPages" Provision="true">
+              <Masterpage Name="CGE.seattle.html" Preview="CGE.seattle.preview" Title="CGE - Seattle" Description="CGE Planasa - Seattle" ContentType="0x0101000F1C8B9E0EB4BE489F09807B2C53288F0054AD6EF48B9F7B45A142F8173F171BD10003D357F861E29844953D5CAA1D4D8A3A" />
+            </Masterpages>
+            <Colors SourcePath="Deploy\Branding\Themes\Colors" Provision="false">
+            </Colors>
+            <Fonts SourcePath="Deploy\Branding\Themes\Fonts" Provision="false">
+            </Fonts>
+            <PageLayouts SourcePath="Deploy\Branding\PageLayouts" TargetPath="CGE" Provision="false">
+              <!--Heredan de Página de Noticia--><!--
+              <PageLayout Name="Noticia con imagen a la derecha.html" Title="Noticia con imagen a la derecha" Description="" ContentType="0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF3900242457EFB8B24247815D688C526CD44D00946EF4246E1B9B4A911ACA43D2CB9C1F"/>
+              <PageLayout Name="Noticia con imagen a la izquierda.html" Title="Noticia con imagen a la izquierda" Description="" ContentType="0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF3900242457EFB8B24247815D688C526CD44D00946EF4246E1B9B4A911ACA43D2CB9C1F"/>-->
+            </PageLayouts>
+          </Catalogs>
+          <SiteColumns SourcePath="Deploy\SiteColumns" Provision="true" RemoveExisting="true">
+
+            <!-- FAQS -->
+            <Field SourceXML="Pregunta.xml" />
+            <Field SourceXML="Respuesta.xml" />
+            
+          </SiteColumns>
+          <ContentTypes SourcePath="Deploy\ContentTypes" Provision="true" RemoveExisting="true">
+
+            <!--BASE-->
+           
+            <!--MAESTROS-->
+
+            <!--COMPARTIDOS-->
+            <ContentType SourceXML="Compartidos\FAQ.xml"/>
+                  
+          </ContentTypes>
+          <Groups Provision="false">
+          </Groups>
+          <Lists Provision="true">
+            <List Name="FAQs" TemplateType="GenericList" UrlPath="FAQs" EnableContentTypes="true" EnableFolderCreation="false" ViewsSourcePath="Deploy\Lists\Views\Compartidos\FAQs.xml">
+              <ContentTypes>
+                <RemoveContentType Name="Elemento"></RemoveContentType>
+                <ContentType Name="FAQ" SetAsDefault="true"/>
+              </ContentTypes>
+            </List>
+            <!--<List Name="Buzon SGIC" TemplateType="Survey" UrlPath="BuzonSGIC" EnableFolderCreation="false">
+              <Questions>
+                <Question FieldSourcePath="Deploy\Lists\Fields\TipoPeticion.xml">
+                </Question>
+                <Question FieldSourcePath="Deploy\Lists\Fields\Peticion.xml">
+                </Question>
+                <Question FieldSourcePath="Deploy\Lists\Fields\Comentarios.xml">
+                </Question>
+              </Questions>
+            </List>-->
+            <!--<List Name="Buzon Test 2" TemplateType="Survey" UrlPath="BuzonTest2" EnableFolderCreation="false">
+            </List>
+            <List Name="Paginas" TemplateType="GenericList" UrlPath="Paginas" EnableContentTypes="true">
+              <ContentTypes>
+                <ContentType Name="Página de noticia" SetAsDefault="false"/>
+              </ContentTypes>
+            </List>
+            <List Name="Glosario" TemplateType="GenericList" UrlPath="Lists\Glosario" EnableContentTypes="true">
+              <ContentTypes>
+                <RemoveContentType Name="Elemento"></RemoveContentType>
+                <ContentType Name="Definición" SetAsDefault="true"/>
+              </ContentTypes>
+            </List>-->
+          </Lists>
+          <Pages Provision="false">
+             <!--<PublishingPage Name="Home" Title="Home" Layout="PageFromDocLayout">
+              <WebParts>
+               <WebPart SourcePath="Deploy\WebParts\Home" Title="Noticias slider" Name="Noticias-slider.webpart" Zone="Header" Index="0"></WebPart>
+                <WebPart SourcePath="Deploy\WebParts\Home" Title="Noticias destacadas" Name="NoticiasDestacadas.webpart" Zone="Header" Index="1"></WebPart>
+                <WebPart SourcePath="Deploy\WebParts\Home" Title="Editor de contenido" Name="Editor de contenido.dwp" Zone="Header" Index="2"></WebPart>
+              </WebParts>
+            </PublishingPage>
+            <PublishingPage Name="Glosario" Title="Glosario de términos" Layout="PageFromDocLayout">
+              <WebParts>
+                <WebPart SourcePath="Deploy\WebParts\Glosario" Title="Glosario" Name="Glosario.webpart" Zone="Header" Index="0"></WebPart>
+                <WebPart SourcePath="Deploy\WebParts\Glosario" Title="Editor de contenido" Name="Editor de contenido.dwp" Zone="Header" Index="1"></WebPart>
+              </WebParts>
+            </PublishingPage>-->
+          </Pages>
+          <Search DefaultResultsPage="Paginas/DocumentosCGE" ShowNavigation="false" Inherit="false" Provision="false">
+          </Search>
+          <Theme Titulo="CGE Seattle" MasterPage="CGE.seattle.master" Colors="CGEColor.spcolor" Fonts="Tipo-MyriadPro.spfont" BackgroundImage="" SystemMasterPage="CGE.seattle.master" Provision="true"></Theme>
+          <Logo Url="/Style Library/CGE/Images/logo.png" Provision="false"></Logo>
+        </RootWeb>
+      </Webs>
+    </Site>
+  </Sites>
+</Tenant>

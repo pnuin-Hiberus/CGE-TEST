@@ -1,0 +1,1092 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="GUID">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})|(\{[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\})"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Tenant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Credentials">
+          <xs:complexType>
+            <xs:attribute name="Account" type="xs:string" use="required" />
+            <xs:attribute name="Password" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Sites">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Site">
+                <xs:complexType>
+                  <xs:sequence minOccurs="0">
+                    <xs:element name="Features">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="unbounded" name="Feature">
+                            <xs:complexType>
+                              <xs:attribute name="ID" type="GUID" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Webs">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="1" name="RootWeb">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Features">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="Feature">
+                                        <xs:complexType>
+                                          <xs:attribute name="ID" type="GUID" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Files">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Images">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="File">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="SourcePath" type="xs:string" use="optional" />
+                                                <xs:attribute name="TargetPath" type="xs:string" use="optional" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                          <xs:attribute name="TargetPath" type="xs:string" use="required" />
+                                          <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="Iconos">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="File">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="SourcePath" type="xs:string" use="optional" />
+                                                <xs:attribute name="TargetPath" type="xs:string" use="optional" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                          <xs:attribute name="TargetPath" type="xs:string" use="required" />
+                                          <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="Css">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="File">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="SourcePath" type="xs:string" use="optional" />
+                                                <xs:attribute name="TargetPath" type="xs:string" use="optional" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                          <xs:attribute name="TargetPath" type="xs:string" use="required" />
+                                          <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="Js">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="File">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="SourcePath" type="xs:string" use="optional" />
+                                                <xs:attribute name="TargetPath" type="xs:string" use="optional" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                          <xs:attribute name="TargetPath" type="xs:string" use="required" />
+                                          <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="xsl">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="File">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="SourcePath" type="xs:string" use="optional" />
+                                                <xs:attribute name="TargetPath" type="xs:string" use="optional" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                          <xs:attribute name="TargetPath" type="xs:string" use="required" />
+                                          <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="DisplayTemplates">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="File">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="SourcePath" type="xs:string" use="optional" />
+                                                <xs:attribute name="TargetPath" type="xs:string" use="optional" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                          <xs:attribute name="TargetPath" type="xs:string" use="required" />
+                                          <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="Fonts">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="File">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="SourcePath" type="xs:string" use="optional" />
+                                                <xs:attribute name="TargetPath" type="xs:string" use="optional" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                          <xs:attribute name="TargetPath" type="xs:string" use="required" />
+                                          <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="LanguageFiles">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="File">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="SourcePath" type="xs:string" use="optional" />
+                                                <xs:attribute name="TargetPath" type="xs:string" use="optional" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                          <xs:attribute name="TargetPath" type="xs:string" use="required" />
+                                          <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="CustomActions">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="CustomAction">
+                                        <xs:complexType>
+                                          <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Catalogs">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Masterpages">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="Masterpage">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="Preview" type="xs:string" use="required" />
+                                                <xs:attribute name="Title" type="xs:string" use="required" />
+                                                <xs:attribute name="Description" type="xs:string" use="required" />
+                                                <xs:attribute name="ContentType" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                          <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="PageLayouts">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="PageLayout">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="Title" type="xs:string" use="required" />
+                                                <xs:attribute name="Description" type="xs:string" use="required" />
+                                                <xs:attribute name="ContentType" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                          <xs:attribute name="TargetPath" type="xs:string" use="required" />
+                                          <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="Colors">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="Color">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                          <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="Fonts">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="Font">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                          <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="Backgrounds">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="Background">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                          <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="SiteColumns">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="Field">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="1" name="RequiredWeb">
+                                              <xs:complexType>
+                                                <xs:attribute name="Title" type="xs:string" use="required" />
+                                                <xs:attribute name="Description" type="xs:string" use="optional" />
+                                                <xs:attribute name="Url" type="xs:string" use="required" />
+                                                <xs:attribute name="LCID" type="xs:unsignedInt" use="required" />
+                                                <xs:attribute name="SiteOwnerLogin" type="xs:string" use="required" />
+                                                <xs:attribute name="Template" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element maxOccurs="1" name="RequiredList">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="TemplateType" type="xs:string" use="required" />
+                                                <xs:attribute name="EnableVersioning" type="xs:boolean" default="false" />
+                                                <xs:attribute name="UrlPath" type="xs:string" use="required" />
+                                                <xs:attribute name="EnableContentTypes" type="xs:boolean" default="false" />
+                                                <xs:attribute name="WebUrl" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="SourceXML" type="xs:string" use="required" />
+                                          <xs:attribute name="TermGroupName" type="xs:string" use="optional" />
+                                          <xs:attribute name="TermSetName" type="xs:string" use="optional" />
+                                          <xs:attribute name="LCID" type="xs:int" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="SourcePath" type="xs:string" />
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="ContentTypes">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="ContentType">
+                                        <xs:complexType>
+                                          <xs:attribute name="SourceXML" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="SourcePath" type="xs:string" />
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Groups">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="Group">
+                                        <xs:complexType>
+                                          <xs:attribute name="Name" type="xs:string" use="required" />
+                                          <xs:attribute name="Description" type="xs:string" use="required" />
+                                          <xs:attribute name="Owner" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Permissions">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="GroupPermissions">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="GroupPermission">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="RoleType" type="xs:string" use="required" />
+                                                <xs:attribute name="IsAssociatedMemberGroup" type="xs:boolean" use="optional" />
+                                                <xs:attribute name="IsAssociatedVisitorGroup" type="xs:boolean" use="optional" />
+                                                <xs:attribute name="IsAssociatedOwnerGroup" type="xs:boolean" use="optional" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element maxOccurs="1" name="Theme">
+                                  <xs:complexType>
+                                    <xs:attribute name="Titulo" type="xs:string" use="required" />
+                                    <xs:attribute name="MasterPage" type="xs:string" use="required" />
+                                    <xs:attribute name="Colors" type="xs:string" use="required" />
+                                    <xs:attribute name="Fonts" type="xs:string" use="required" />
+                                    <xs:attribute name="BackgroundImage" type="xs:string" use="required" />
+                                    <xs:attribute name="SystemMasterPage" type="xs:string" use="required" />
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Logo">
+                                  <xs:complexType>
+                                    <xs:attribute name="Url" type="xs:string" use="required" />
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Navigation">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="GlobalNavigation">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="FirstLevelNode" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="SecondLevelNode" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="Title" type="xs:string" use="required"></xs:attribute>
+                                                      <xs:attribute name="Url" type="xs:string" use="required"></xs:attribute>
+                                                      <xs:attribute name="AsLastNode" type="xs:boolean" default="true"></xs:attribute>
+                                                      <xs:attribute name="IsExternal" type="xs:boolean" default="true"></xs:attribute>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="Title" type="xs:string" use="required"></xs:attribute>
+                                                <xs:attribute name="Url" type="xs:string" use="required"></xs:attribute>
+                                                <xs:attribute name="AsLastNode" type="xs:boolean" default="true"></xs:attribute>
+                                                <xs:attribute name="IsExternal" type="xs:boolean" default="true"></xs:attribute>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="Type" type="xs:string" use="required" />
+                                          <xs:attribute name="NavigationTermGroupName" type="xs:string" use="required" />
+                                          <xs:attribute name="NavigationTermSetName" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="CurrentNavigation">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="FirstLevelNode" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="SecondLevelNode" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="Title" type="xs:string" use="required"></xs:attribute>
+                                                      <xs:attribute name="Url" type="xs:string" use="required"></xs:attribute>
+                                                      <xs:attribute name="AsLastNode" type="xs:boolean" default="true"></xs:attribute>
+                                                      <xs:attribute name="IsExternal" type="xs:boolean" default="true"></xs:attribute>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="Title" type="xs:string" use="required"></xs:attribute>
+                                                <xs:attribute name="Url" type="xs:string" use="required"></xs:attribute>
+                                                <xs:attribute name="AsLastNode" type="xs:boolean" default="true"></xs:attribute>
+                                                <xs:attribute name="IsExternal" type="xs:boolean" default="true"></xs:attribute>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="Type" type="xs:string" use="required" />
+                                          <xs:attribute name="NavigationTermGroupName" type="xs:string" use="required" />
+                                          <xs:attribute name="NavigationTermSetName" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Lists">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="List">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="Permissions">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" name="RemoveRoleAssignment">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="Name" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element maxOccurs="unbounded" name="AddRoleAssignment">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="Name" type="xs:string" use="required" />
+                                                      <xs:attribute name="RoleType" type="xs:string" use="required" />
+                                                      <xs:attribute name="IsAssociatedMemberGroup" type="xs:boolean" use="optional" />
+                                                      <xs:attribute name="IsAssociatedVisitorGroup" type="xs:boolean" use="optional" />
+                                                      <xs:attribute name="IsAssociatedOwnerGroup" type="xs:boolean" use="optional" />
+                                                      <xs:attribute name="RemoveExistingRoleDefinitions" type="xs:boolean" default="true" use="optional" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="CopyRoleAssignments" type="xs:boolean" default="true"></xs:attribute>
+                                                <xs:attribute name="ClearSubscopes" type="xs:boolean" default="false"></xs:attribute>
+                                                <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="ContentTypes">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" name="ContentType">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="ID" type="GUID" use="required" />
+                                                      <xs:attribute name="Name" type="xs:string" use="optional" />
+                                                      <xs:attribute name="SetAsDefault" type="xs:boolean" default="false" use="optional" />
+                                                      <xs:attribute name="SearchContentTypeInSiteHierarchy" type="xs:boolean" default="true" use="optional" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element maxOccurs="unbounded" name="RemoveContentType">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="Name" type="xs:string" use="optional" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Folders">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" name="Folder">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="Name" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Questions">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" name="Question">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="FieldSourcePath" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="Name" type="xs:string" use="required" />
+                                          <xs:attribute name="TemplateType" type="xs:string" use="required" />
+                                          <xs:attribute name="EnableVersioning" type="xs:boolean" use="required" />
+                                          <xs:attribute name="UrlPath" type="xs:string"  use="required"/>
+                                          <xs:attribute name="ViewsSourcePath" type="xs:string"  use="optional"/>
+                                          <xs:attribute name="EnableContentTypes" type="xs:boolean" use="required" />
+                                          <xs:attribute name="EnableFolderCreation" type="xs:boolean" use="optional" default="false" />
+                                          <xs:attribute name="DraftVisibilityType" type="xs:string" use="optional" />
+                                          <xs:attribute name="ForceCheckOut" type="xs:boolean" use="optional" default="false" />
+                                          <xs:attribute name="EnableMinorVersions" type="xs:boolean" use="optional" default="true" />
+                                          <xs:attribute name="MajorVersionLimit" type="xs:int" use="optional" default="0" />
+                                          <xs:attribute name="MajorWithMinorVersionsLimit" type="xs:int" use="optional" default="0" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Apps">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="App">
+                                        <xs:complexType>
+                                          <xs:attribute name="ProductId" type="GUID" use="required" />
+                                          <xs:attribute name="AppFileName" type="xs:string" use="required" />
+                                          <xs:attribute name="LCID" type="xs:unsignedInt" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="AppCatalogUrl" type="xs:string" use="required" />
+                                    <xs:attribute name="AppCatalogListUrl" type="xs:string" use="required" />
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Pages">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="PublishingPage">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="WebParts">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" name="WebPart">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                                      <xs:attribute name="Name" type="xs:string" use="required" />
+                                                      <xs:attribute name="Title" type="xs:string" use="optional" />
+                                                      <xs:attribute name="Zone" type="xs:string" use="required" />
+                                                      <xs:attribute name="Index" type="xs:int" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="Name" type="xs:string" use="required" />
+                                          <xs:attribute name="Title" type="xs:string" use="optional" />
+                                          <xs:attribute name="Layout" type="xs:string" use="required" />
+                                          <xs:attribute name="RemoveIfExists" type="xs:boolean" use="optional" default="false" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element maxOccurs="unbounded" name="SitePage">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="WebParts">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" name="WebPart">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                                      <xs:attribute name="Name" type="xs:string" use="required" />
+                                                      <xs:attribute name="Title" type="xs:string" use="optional" />
+                                                      <xs:attribute name="Zone" type="xs:string" use="required" />
+                                                      <xs:attribute name="Index" type="xs:int" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="Name" type="xs:string" use="required" />
+                                          <xs:attribute name="Title" type="xs:string" use="optional" />
+                                          <xs:attribute name="Layout" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element maxOccurs="1" name="Search">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="1" name="SearchNodes">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="SearchNode">
+                                              <xs:complexType>
+                                                <xs:attribute name="Title" type="xs:string" use="required" />
+                                                <xs:attribute name="TargetPath" type="xs:string" use="required" />
+                                                <xs:attribute name="ParentNodeTitle" type="xs:string" use="optional" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="DefaultResultsPage" type="xs:string" use="required" />
+                                    <xs:attribute name="ShowNavigation" type="xs:boolean" default="true" />
+                                    <xs:attribute name="Inherit" type="xs:boolean" default="true" />
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="SearchCenterUrl" type="xs:string" use="required" />
+                              <xs:attribute name="WelcomePage" type="xs:string" use="required" />
+                              <xs:attribute name="SearchSettingsSourcePath" type="xs:string" use="optional" />
+                              <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element maxOccurs="unbounded" name="Web">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Features">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="Feature">
+                                        <xs:complexType>
+                                          <xs:attribute name="ID" type="GUID" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="SiteColumns">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="Field">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="1" name="RequiredList">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="TemplateType" type="xs:string" use="required" />
+                                                <xs:attribute name="EnableVersioning" type="xs:boolean" default="false" />
+                                                <xs:attribute name="UrlPath" type="xs:string" use="required" />
+                                                <xs:attribute name="EnableContentTypes" type="xs:boolean" default="false" />
+                                                <xs:attribute name="WebUrl" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="SourceXML" type="xs:string" use="required" />
+                                          <xs:attribute name="TermGroupName" type="xs:string" use="optional" />
+                                          <xs:attribute name="TermSetName" type="xs:string" use="optional" />
+                                          <xs:attribute name="LCID" type="xs:int" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="SourcePath" type="xs:string" />
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="ContentTypes">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="ContentType">
+                                        <xs:complexType>
+                                          <xs:attribute name="SourceXML" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="SourcePath" type="xs:string" />
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Catalogs">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Masterpages">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="Masterpage">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="Preview" type="xs:string" use="required" />
+                                                <xs:attribute name="Title" type="xs:string" use="required" />
+                                                <xs:attribute name="Description" type="xs:string" use="required" />
+                                                <xs:attribute name="ContentType" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                          <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Permissions">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="RemovePermission">
+                                        <xs:complexType>
+                                          <xs:attribute name="Name" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element maxOccurs="unbounded" name="AddPermission">
+                                        <xs:complexType>
+                                          <xs:attribute name="Name" type="xs:string" use="required" />
+                                          <xs:attribute name="RoleType" type="xs:string" use="required" />
+                                          <xs:attribute name="IsAssociatedMemberGroup" type="xs:boolean" use="optional" />
+                                          <xs:attribute name="IsAssociatedVisitorGroup" type="xs:boolean" use="optional" />
+                                          <xs:attribute name="IsAssociatedOwnerGroup" type="xs:boolean" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="BreakRoleInheritance" type="xs:boolean" default="false"></xs:attribute>
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element maxOccurs="1" name="Theme">
+                                  <xs:complexType>
+                                    <xs:attribute name="Titulo" type="xs:string" use="required" />
+                                    <xs:attribute name="MasterPage" type="xs:string" use="required" />
+                                    <xs:attribute name="Colors" type="xs:string" use="required" />
+                                    <xs:attribute name="Fonts" type="xs:string" use="required" />
+                                    <xs:attribute name="BackgroundImage" type="xs:string" use="required" />
+                                    <xs:attribute name="SystemMasterPage" type="xs:string" use="required" />
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Logo">
+                                  <xs:complexType>
+                                    <xs:attribute name="Url" type="xs:string" use="required" />
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Navigation">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="GlobalNavigation">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="FirstLevelNode" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="SecondLevelNode" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="Title" type="xs:string" use="required"></xs:attribute>
+                                                      <xs:attribute name="Url" type="xs:string" use="required"></xs:attribute>
+                                                      <xs:attribute name="AsLastNode" type="xs:boolean" default="true"></xs:attribute>
+                                                      <xs:attribute name="IsExternal" type="xs:boolean" default="true"></xs:attribute>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="Title" type="xs:string" use="required"></xs:attribute>
+                                                <xs:attribute name="Url" type="xs:string" use="required"></xs:attribute>
+                                                <xs:attribute name="AsLastNode" type="xs:boolean" default="true"></xs:attribute>
+                                                <xs:attribute name="IsExternal" type="xs:boolean" default="true"></xs:attribute>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="Type" type="xs:string" use="required" />
+                                          <xs:attribute name="NavigationTermGroupName" type="xs:string" use="required" />
+                                          <xs:attribute name="NavigationTermSetName" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="CurrentNavigation">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="FirstLevelNode" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="SecondLevelNode" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="Title" type="xs:string" use="required"></xs:attribute>
+                                                      <xs:attribute name="Url" type="xs:string" use="required"></xs:attribute>
+                                                      <xs:attribute name="AsLastNode" type="xs:boolean" default="true"></xs:attribute>
+                                                      <xs:attribute name="IsExternal" type="xs:boolean" default="true"></xs:attribute>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="Title" type="xs:string" use="required"></xs:attribute>
+                                                <xs:attribute name="Url" type="xs:string" use="required"></xs:attribute>
+                                                <xs:attribute name="AsLastNode" type="xs:boolean" default="true"></xs:attribute>
+                                                <xs:attribute name="IsExternal" type="xs:boolean" default="true"></xs:attribute>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="Type" type="xs:string" use="required" />
+                                          <xs:attribute name="NavigationTermGroupName" type="xs:string" use="required" />
+                                          <xs:attribute name="NavigationTermSetName" type="xs:string" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Lists">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="List">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="Permissions">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" name="RemoveRoleAssignment">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="Name" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element maxOccurs="unbounded" name="AddRoleAssignment">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="Name" type="xs:string" use="required" />
+                                                      <xs:attribute name="RoleType" type="xs:string" use="required" />
+                                                      <xs:attribute name="IsAssociatedMemberGroup" type="xs:boolean" use="optional" />
+                                                      <xs:attribute name="IsAssociatedVisitorGroup" type="xs:boolean" use="optional" />
+                                                      <xs:attribute name="IsAssociatedOwnerGroup" type="xs:boolean" use="optional" />
+                                                      <xs:attribute name="RemoveExistingRoleDefinitions" type="xs:boolean" default="true" use="optional" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="CopyRoleAssignments" type="xs:boolean" default="true"></xs:attribute>
+                                                <xs:attribute name="ClearSubscopes" type="xs:boolean" default="false"></xs:attribute>
+                                                <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="ContentTypes">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" name="ContentType">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="ID" type="GUID" use="required" />
+                                                      <xs:attribute name="Name" type="xs:string" use="optional" />
+                                                      <xs:attribute name="SetAsDefault" type="xs:boolean" default="false" use="optional" />
+                                                      <xs:attribute name="DocumentTemplatePath" type="xs:string" use="optional" />
+                                                      <xs:attribute name="SearchContentTypeInSiteHierarchy" type="xs:boolean" default="true" use="optional" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element maxOccurs="unbounded" name="RemoveContentType">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="Name" type="xs:string" use="optional" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Folders">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" name="Folder">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="AssociatedContentTypes">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element maxOccurs="unbounded" name="AsignedContentType">
+                                                                <xs:complexType>
+                                                                  <xs:attribute name="Name" type="xs:string" use="required" />
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                            </xs:sequence>
+                                                            <xs:attribute name="OrderBy" type="xs:string" default="Ascending" />
+                                                            <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element name="Permissions">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element maxOccurs="unbounded" name="RemoveRoleAssignment">
+                                                                <xs:complexType>
+                                                                  <xs:attribute name="Name" type="xs:string" use="required" />
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                              <xs:element maxOccurs="unbounded" name="AddRoleAssignment">
+                                                                <xs:complexType>
+                                                                  <xs:attribute name="Name" type="xs:string" use="required" />
+                                                                  <xs:attribute name="RoleType" type="xs:string" use="required" />
+                                                                  <xs:attribute name="RemoveExistingRoleDefinitions" type="xs:boolean" default="true" use="optional" />
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                            </xs:sequence>
+                                                            <xs:attribute name="CopyRoleAssignments" type="xs:boolean" default="true"></xs:attribute>
+                                                            <xs:attribute name="ClearSubscopes" type="xs:boolean" default="false"></xs:attribute>
+                                                            <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                      </xs:sequence>
+                                                      <xs:attribute name="Name" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Questions">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" name="Question">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="FieldSourcePath" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="Name" type="xs:string" use="required" />
+                                          <xs:attribute name="TemplateType" type="xs:string" use="required" />
+                                          <xs:attribute name="EnableVersioning" type="xs:boolean" use="required" />
+                                          <xs:attribute name="UrlPath" type="xs:string"  use="required"/>
+                                          <xs:attribute name="EnableContentTypes" type="xs:boolean" use="required" />
+                                          <xs:attribute name="EnableFolderCreation" type="xs:boolean" use="optional" default="false" />
+                                          <xs:attribute name="ViewsSourcePath" type="xs:string" use="optional" />
+                                          <xs:attribute name="DraftVisibilityType" type="xs:string" use="optional" />
+                                          <xs:attribute name="ForceCheckOut" type="xs:boolean" use="optional" default="false" />
+                                          <xs:attribute name="EnableMinorVersions" type="xs:boolean" use="optional" default="true" />
+                                          <xs:attribute name="MajorVersionLimit" type="xs:int" use="optional" default="0" />
+                                          <xs:attribute name="MajorWithMinorVersionsLimit" type="xs:int" use="optional" default="0" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Apps">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="App">
+                                        <xs:complexType>
+                                          <xs:attribute name="ProductId" type="GUID" use="required" />
+                                          <xs:attribute name="AppFileName" type="xs:string" use="required" />
+                                          <xs:attribute name="LCID" type="xs:unsignedInt" use="required" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="AppCatalogUrl" type="xs:string" use="required" />
+                                    <xs:attribute name="AppCatalogListUrl" type="xs:string" use="required" />
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Pages">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="PublishingPage">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="WebParts">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" name="WebPart">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                                      <xs:attribute name="Name" type="xs:string" use="required" />
+                                                      <xs:attribute name="Title" type="xs:string" use="optional" />
+                                                      <xs:attribute name="Zone" type="xs:string" use="required" />
+                                                      <xs:attribute name="Index" type="xs:int" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="Name" type="xs:string" use="required" />
+                                          <xs:attribute name="Title" type="xs:string" use="optional" />
+                                          <xs:attribute name="Layout" type="xs:string" use="required" />
+                                          <xs:attribute name="RemoveIfExists" type="xs:boolean" use="optional" default="false" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element maxOccurs="unbounded" name="SitePage">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="WebParts">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" name="WebPart">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="SourcePath" type="xs:string" use="required" />
+                                                      <xs:attribute name="Name" type="xs:string" use="required" />
+                                                      <xs:attribute name="Title" type="xs:string" use="optional" />
+                                                      <xs:attribute name="Zone" type="xs:string" use="required" />
+                                                      <xs:attribute name="Index" type="xs:int" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="Name" type="xs:string" use="required" />
+                                          <xs:attribute name="Title" type="xs:string" use="optional" />
+                                          <xs:attribute name="Layout" type="xs:string" use="required" />
+                                          <xs:attribute name="RemoveIfExists" type="xs:boolean" use="optional" default="false" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element maxOccurs="1" name="Search">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="1" name="SearchNodes">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" name="SearchNode">
+                                              <xs:complexType>
+                                                <xs:attribute name="Title" type="xs:string" use="required" />
+                                                <xs:attribute name="TargetPath" type="xs:string" use="required" />
+                                                <xs:attribute name="ParentNodeTitle" type="xs:string" use="optional" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="DefaultResultsPage" type="xs:string" use="required" />
+                                    <xs:attribute name="ShowNavigation" type="xs:boolean" default="true" />
+                                    <xs:attribute name="Inherit" type="xs:boolean" default="true" />
+                                    <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="Title" type="xs:string" use="required" />
+                              <xs:attribute name="SearchCenterUrl" type="xs:string" use="required" />
+                              <xs:attribute name="Description" type="xs:string" use="required" />
+                              <xs:attribute name="Url" type="xs:string" use="required" />
+                              <xs:attribute name="lcid" type="xs:unsignedInt" use="required" />
+                              <xs:attribute name="SiteOwnerLogin" type="xs:string" use="required" />
+                              <xs:attribute name="Template" type="xs:string" use="required" />
+                              <xs:attribute name="InheritPermissions" type="xs:boolean" use="required" />
+                              <xs:attribute name="InheritNavigation" type="xs:boolean" use="required" />
+                              <xs:attribute name="WelcomePage" type="xs:string" use="required" />
+                              <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="Provision" type="xs:boolean" default="true" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Title" type="xs:string" use="required" />
+                  <xs:attribute name="Description" type="xs:string" use="optional" />
+                  <xs:attribute name="Url" type="xs:string" use="required" />
+                  <xs:attribute name="LCID" type="xs:unsignedInt" use="required" />
+                  <xs:attribute name="CurrentResourceUsage" type="xs:double" use="required" />
+                  <xs:attribute name="StorageUsage" type="xs:long" use="required" />
+                  <xs:attribute name="SiteOwnerLogin" type="xs:string" use="required" />
+                  <xs:attribute name="Template" type="xs:string" use="required" />
+                  <xs:attribute name="TimeZoneId" type="xs:int" use="required" />
+                  <xs:attribute name="ProvisionListItems" type="xs:boolean" use="optional" />
+                  <xs:attribute name="ListItemsSourcePath" type="xs:string" use="optional" />
+
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Url" type="xs:string" use="required" />
+      <xs:attribute name="AdminUrl" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

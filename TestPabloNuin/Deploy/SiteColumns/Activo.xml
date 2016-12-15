@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">  
+  <Field
+       ID="{B3EAE44B-8741-43FF-A86F-F36E3D78930B}"
+       Name="Activo"
+       StaticName="Activo"
+       DisplayName="Activo"
+       Type="Boolean"
+       Required="TRUE"
+       Group="Columnas Consejo General de Enfermería">
+    <Default>0</Default>
+  </Field>
+</Elements>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Field Type='Choice' DisplayName='Tipo de Petición' Format='RadioButtons' Required="TRUE">
+  <CHOICES>
+    <CHOICE>Sugerencia</CHOICE>
+    <CHOICE>Queja</CHOICE>
+  </CHOICES>
+</Field>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ContentType ID="0x010040D02896674E4D22A0255819E17E1B77"
+               Name="FAQ"
+               Group="Tipos de contenido de SGE"
+               Description="Tipo de Contenido para FAQ´s"
+               Inherits="False"
+               Version="0">
+    <FieldRefs>
+      <RemoveFieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" />
+      <FieldRef ID="{2465ACFB-A739-4DEB-A5AD-FB7F8D94D7A9}" Name="Pregunta" DisplayName="Pregunta" Required="TRUE" />
+      <FieldRef ID="{98237747-2146-429D-B924-FBE0529483EF}" Name="Respuesta" DisplayName="Respuesta" Required="TRUE" />
+      <!--<FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Hidden="TRUE" Required="FALSE" DisplayName="_hidden" />-->
+    </FieldRefs>
+  </ContentType>
+</Elements>

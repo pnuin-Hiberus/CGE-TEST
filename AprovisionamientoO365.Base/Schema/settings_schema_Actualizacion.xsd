@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema 
+    id="HiberusUpdateSchema"
+    targetNamespace="my://HiberusUpdate"
+    xmlns="my://HiberusUpdate"
+    attributeFormDefault="unqualified" 
+    elementFormDefault="qualified" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="GUID">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})|(\{[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\})"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Tenant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Credentials">
+          <xs:complexType>
+            <xs:attribute name="Account" type="xs:string" use="required" />
+            <xs:attribute name="Password" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Sites">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="Site">
+                <xs:complexType>
+                  <xs:sequence minOccurs="0">
+                    <xs:element name="Webs">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element maxOccurs="1" minOccurs="1" name="RootWeb">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="1" minOccurs="0" name="SiteColumns">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" minOccurs="0" name="Field">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="1" minOccurs="0" name="RequiredWeb">
+                                              <xs:complexType>
+                                                <xs:attribute name="Title" type="xs:string" use="required" />
+                                                <xs:attribute name="Description" type="xs:string" use="optional" />
+                                                <xs:attribute name="Url" type="xs:string" use="required" />
+                                                <xs:attribute name="LCID" type="xs:unsignedInt" use="required" />
+                                                <xs:attribute name="SiteOwnerLogin" type="xs:string" use="required" />
+                                                <xs:attribute name="Template" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element maxOccurs="1" minOccurs="0" name="RequiredList">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="TemplateType" type="xs:string" use="required" />
+                                                <xs:attribute name="EnableVersioning" type="xs:boolean" default="false" />
+                                                <xs:attribute name="UrlPath" type="xs:string" use="required" />
+                                                <xs:attribute name="EnableContentTypes" type="xs:boolean" default="false" />
+                                                <xs:attribute name="WebUrl" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="SourceXML" type="xs:string" use="required" />
+                                          <xs:attribute name="UpdateAndPushChanges" type="xs:boolean" use="optional" default="true" />
+                                          <xs:attribute name="TermGroupName" type="xs:string" use="optional" />
+                                          <xs:attribute name="TermSetName" type="xs:string" use="optional" />
+                                          <xs:attribute name="LCID" type="xs:int" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="SourcePath" type="xs:string" />
+                                    <xs:attribute name="Update" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element maxOccurs="1" minOccurs="0" name="ContentTypes">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" minOccurs="0" name="ContentType">
+                                        <xs:complexType>
+                                          <xs:attribute name="SourceXML" type="xs:string" use="required" />
+                                          <xs:attribute name="UpdateChildren" type="xs:boolean" use="optional" default="true" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="SourcePath" type="xs:string" />
+                                    <xs:attribute name="Update" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element maxOccurs="1" minOccurs="0" name="Lists">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" minOccurs="0" name="List">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="1" minOccurs="0" name="ContentTypes">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" minOccurs="0" name="ContentType">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="ID" type="GUID" use="required" />
+                                                      <xs:attribute name="Name" type="xs:string" use="optional" />
+                                                      <xs:attribute name="SetAsDefault" type="xs:boolean" default="false" use="optional" />
+                                                      <xs:attribute name="SearchContentTypeInSiteHierarchy" type="xs:boolean" default="true" use="optional" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element maxOccurs="unbounded" minOccurs="0" name="RemoveContentType">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="Name" type="xs:string" use="optional" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="Update" type="xs:boolean" default="true" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element maxOccurs="1" minOccurs="0" name="Folders">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" minOccurs="0" name="Folder">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="Name" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="Update" type="xs:boolean" default="true" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="DisplayName" type="xs:string" use="optional" />
+                                          <xs:attribute name="Name" type="xs:string" use="required" />
+                                          <xs:attribute name="TemplateType" type="xs:string" use="optional" />
+                                          <xs:attribute name="EnableVersioning" type="xs:boolean" use="required" />
+                                          <xs:attribute name="UrlPath" type="xs:string"  use="required"/>
+                                          <xs:attribute name="ViewsSourcePath" type="xs:string"  use="optional"/>
+                                          <xs:attribute name="EnableContentTypes" type="xs:boolean" use="optional" />
+                                          <xs:attribute name="EnableFolderCreation" type="xs:boolean" use="optional" default="false" />
+                                          <xs:attribute name="DraftVisibilityType" type="xs:string" use="optional" />
+                                          <xs:attribute name="ForceCheckOut" type="xs:boolean" use="optional" default="false" />
+                                          <xs:attribute name="EnableMinorVersions" type="xs:boolean" use="optional" default="true" />
+                                          <xs:attribute name="MajorVersionLimit" type="xs:int" use="optional" default="0" />
+                                          <xs:attribute name="MajorWithMinorVersionsLimit" type="xs:int" use="optional" default="0" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Update" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="Update" type="xs:boolean" default="true" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element maxOccurs="unbounded" minOccurs="0" name="Web">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="1" minOccurs="0" name="SiteColumns">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" minOccurs="0" name="Field">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="1" minOccurs="0" name="RequiredList">
+                                              <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" use="required" />
+                                                <xs:attribute name="TemplateType" type="xs:string" use="required" />
+                                                <xs:attribute name="EnableVersioning" type="xs:boolean" default="false" />
+                                                <xs:attribute name="UrlPath" type="xs:string" use="required" />
+                                                <xs:attribute name="EnableContentTypes" type="xs:boolean" default="false" />
+                                                <xs:attribute name="WebUrl" type="xs:string" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="SourceXML" type="xs:string" use="required" />
+                                          <xs:attribute name="TermGroupName" type="xs:string" use="optional" />
+                                          <xs:attribute name="TermSetName" type="xs:string" use="optional" />
+                                          <xs:attribute name="LCID" type="xs:int" use="optional" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="SourcePath" type="xs:string" />
+                                    <xs:attribute name="Update" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element maxOccurs="1" minOccurs="0" name="ContentTypes">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" minOccurs="0" name="ContentType">
+                                        <xs:complexType>
+                                          <xs:attribute name="SourceXML" type="xs:string" use="required" />
+                                          <xs:attribute name="UpdateChildren" type="xs:boolean" use="optional" default="true" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="SourcePath" type="xs:string" />
+                                    <xs:attribute name="Update" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element maxOccurs="1" minOccurs="0" name="Lists">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" minOccurs="0" name="List">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element maxOccurs="unbounded" minOccurs="0" name="ContentTypes">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="unbounded" minOccurs="0" name="ContentType">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="ID" type="GUID" use="required" />
+                                                      <xs:attribute name="Name" type="xs:string" use="optional" />
+                                                      <xs:attribute name="SetAsDefault" type="xs:boolean" default="false" use="optional" />
+                                                      <xs:attribute name="DocumentTemplatePath" type="xs:string" use="optional" />
+                                                      <xs:attribute name="SearchContentTypeInSiteHierarchy" type="xs:boolean" default="true" use="optional" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element maxOccurs="unbounded" minOccurs="0" name="RemoveContentType">
+                                                    <xs:complexType>
+                                                      <xs:attribute name="Name" type="xs:string" use="optional" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="Update" type="xs:boolean" default="true" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Folders">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element maxOccurs="1" minOccurs="0" name="Folder">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element maxOccurs="1" minOccurs="0" name="AssociatedContentTypes">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element maxOccurs="unbounded" minOccurs="0" name="AsignedContentType">
+                                                                <xs:complexType>
+                                                                  <xs:attribute name="Name" type="xs:string" use="required" />
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                            </xs:sequence>
+                                                            <xs:attribute name="OrderBy" type="xs:string" default="Ascending" />
+                                                            <xs:attribute name="Update" type="xs:boolean" default="true" />
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                      </xs:sequence>
+                                                      <xs:attribute name="Name" type="xs:string" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="Update" type="xs:boolean" default="true" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute name="DisplayName" type="xs:string" use="optional" />
+                                          <xs:attribute name="Name" type="xs:string" use="required" />
+                                          <xs:attribute name="TemplateType" type="xs:string" use="optional" />
+                                          <xs:attribute name="EnableVersioning" type="xs:boolean" use="optional" />
+                                          <xs:attribute name="UrlPath" type="xs:string"  use="required"/>
+                                          <xs:attribute name="EnableContentTypes" type="xs:boolean" use="optional" />
+                                          <xs:attribute name="EnableFolderCreation" type="xs:boolean" use="optional" default="false" />
+                                          <xs:attribute name="ViewsSourcePath" type="xs:string" use="optional" />
+                                          <xs:attribute name="DraftVisibilityType" type="xs:string" use="optional" />
+                                          <xs:attribute name="ForceCheckOut" type="xs:boolean" use="optional" default="false" />
+                                          <xs:attribute name="EnableMinorVersions" type="xs:boolean" use="optional" default="true" />
+                                          <xs:attribute name="MajorVersionLimit" type="xs:int" use="optional" default="0" />
+                                          <xs:attribute name="MajorWithMinorVersionsLimit" type="xs:int" use="optional" default="0" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Update" type="xs:boolean" default="true" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="Url" type="xs:string" use="required" />
+                              <xs:attribute name="Update" type="xs:boolean" default="true" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="Update" type="xs:boolean" default="true" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Url" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Url" type="xs:string" use="required" />
+      <xs:attribute name="AdminUrl" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

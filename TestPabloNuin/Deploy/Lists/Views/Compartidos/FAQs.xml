@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ListViews>
+  <List Type="GenericList">
+    <View
+        Name="FAQs"
+        ViewTypeKind="1"
+        ViewFields="Attachments,Pregunta,Respuesta"
+        RowLimit="30"
+        Paged="true"
+        DefaultView="true">
+      <ViewQuery></ViewQuery>
+      <JSLink>~site/Style Library/CGE/JS/Adjuntos.js</JSLink>
+    </View>
+  </List>
+</ListViews>
